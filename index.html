@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SCCO Demo</title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="library/jquery-3.7.0.min.js"></script>
+    <script src="library/latest.sdk.bundle.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu mb-1">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand">Stringee</a>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="form-group-token">
+                        <div class="form-floating mb-1">
+                            <textarea class="form-control" placeholder="Access token" id="accessTokenArea"></textarea>
+                            <label for="accessTokenArea">TOKEN</label>
+                        </div>
+                        <button class="btn btn-primary" type="submit" id="connectBtn">Connect</button>
+                        <span id="connectedUserId" style="color: red">Not connected</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="form-floating">
+                        <textarea class="form-control"
+                            placeholder="Enter the phone number purchased from Stringee here to make an App-to-Phone call"
+                            id="fromNumber"></textarea>
+                        <label for="fromNumber">Phone number from Stringee</label>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="form-floating mb-1">
+                        <textarea class="form-control" placeholder="userId or number" id="callTo"></textarea>
+                        <label for="callTo">User ID or number need to call out</label>
+                    </div>
+                    <button class="btn btn-success" type="submit" id="callBtn" onclick="makeACall()">Call</button>
+                    <button class="btn btn-danger" type="submit" id="hangupBtn" onclick="hangupCall()">Hangup</button>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div id="incoming-call-div">
+                        Incoming call from: <span id="incoming_call_from"></span>
+                        <button class="btn btn-success" type="submit" id="answerBtn"
+                            onclick="answerCall()">Answer</button>
+                        <button class="btn btn-danger" type="submit" id="rejectBtn"
+                            onclick="rejectCall()">Reject</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div>
+                        Call status: <span id="callStatus" style="color: red">Not started</span> |
+                        Call type: <span id="callType" style="color: red">...</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                </div>
+            </div>
+        </div>
+        <div>
+            <video id="remoteVideo" playsinline autoplay style="width: 350px"></video>
+        </div>
+    </div>
+</body>
+
+</html>

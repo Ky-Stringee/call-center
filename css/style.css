@@ -1,0 +1,8 @@
+#incoming-call-div {
+    display: none;
+    background: yellow;
+    height: 50px;
+    padding-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
